@@ -177,7 +177,7 @@ function render(){
 function funds(){
   var late=S.r.filter(function(r){var x=rem(r);return x.s+x.l>0});
   var h='<div class="card"><label style="margin-top:0">اسم العمارة</label><div class="two"><input id="bn" value="'+esc(S.name||'')+'" placeholder="مثلاً: عمارة النور"><button class="btn" style="margin-top:0;width:auto;padding:0 18px" onclick="setName()">حفظ</button></div></div><div class="card"><div class="mut">🛗 خزينة الأسانسير</div>'+bal2(bal('lift'))+'</div>'
-  +'<div class="card"><div class="mut">🧹 خزينة الخدمات</div>'+bal2(bal('services'))+'</div>';
+  +'<div class="card"><div class="mut">🧹 خزينة الخدمات</div>'+bal2(bal('services'))+'</div><div class="card" style="background:var(--soft)"><div class="mut">💰 إجمالي الخزائن</div>'+bal2(bal('lift')+bal('services'))+'</div>';
   if(S.r.length&&!hasPlan(mk()))h+='<div class="card" style="background:var(--soft)"><b>📅 لسه ماحددتش مبالغ الشهر ده</b><button class="btn" onclick="go(2)">حدد المبالغ</button></div>';
   h+='<div class="card"><b>المتأخرات</b>';
   if(!S.r.length)h+='<p class="mut">ضيف السكان الأول</p>';
